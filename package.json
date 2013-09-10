@@ -11,7 +11,10 @@
     "jade": "*",
     "stylus": "*",
     "angular": "*",
-    "mongodb": "*" ,
-    "bootstrap-stylus": "*"
+    "mongodb": ">= 2.4.6" ,
+    "bootstrap-stylus": "*",
+    "mocha": "*",
+    "expect.js": "*",
+    "superagent": "*"
   }
 }

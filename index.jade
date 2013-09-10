@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1= title
+    #products
+        - each product in products
+            div.product
+                div.created_at= product.created_at
+                div.name= product.name
+                div.description= product.description
+        a(href="/product/new")!= "Add New Product"

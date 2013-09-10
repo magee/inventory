@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1= title
+    div.newproduct
+        form( method="post")
+            div
+                div
+                    span.label Name :
+                    input(type="text", name="name", id="editProductName")
+                div
+                    span.label Description :
+                    input(type="text", name="description", id="editProductDescription")
+                div#editProductSubmit
+                    input(type="submit", value="Save")
+        a(href="/")!= "Back to Product List"

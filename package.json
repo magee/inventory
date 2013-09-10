@@ -11,7 +11,7 @@
     "jade": "*",
     "stylus": "*",
     "angular": "*",
-    "mongodb": ">= 2.4.6" ,
+    "mongodb": "*" ,
     "bootstrap-stylus": "*",
     "mocha": "*",
     "expect.js": "*",

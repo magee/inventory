@@ -2,12 +2,12 @@
 <project version="4">
   <component name="JSHintConfiguration" version="1.0.0" use-config-file="false">
     <option bitwise="true" />
-    <option camelcase="true" />
+    <option camelcase="false" />
     <option curly="true" />
     <option eqeqeq="true" />
     <option forin="true" />
     <option immed="true" />
-    <option latedef="true" />
+    <option latedef="false" />
     <option newcap="false" />
     <option noarg="true" />
     <option noempty="true" />
@@ -33,7 +33,7 @@
     <option iterator="false" />
     <option lastsemic="false" />
     <option laxbreak="false" />
-    <option laxcomma="false" />
+    <option laxcomma="true" />
     <option loopfunc="false" />
     <option multistr="false" />
     <option proto="false" />

@@ -1,20 +1,25 @@
 {
   "name": "Inventory",
-  "repository": "https://github.com/magee/inventory.git",
   "version": "0.0.1",
-  "private": true,
-  "scripts": {
-  "start": "node app.js"
-  },
+  "description": "product inventory management and InfusionSoft integration",
+  "repository": "https://github.com/magee/inventory.git",
+  "start": "node app.js",
+  "main": "app.js",
+  "author": "Magee Mooney",
   "dependencies": {
     "express": "3.4.0",
+    "angular": "*",
+    "mongodb": "*",
+    "bootstrap-stylus": "*",
+    "superagent": "*"
+  },
+  "devDependencies": {
+    "mocha": ">=0.3.x",
+    "expect.js": "*",
     "jade": "*",
     "stylus": "*",
-    "angular": "*",
-    "mongodb": "*" ,
-    "bootstrap-stylus": "*",
-    "mocha": "*",
-    "expect.js": "*",
-    "superagent": "*"
-  }
+    "jasmine-node": "1.7.1"
+  },
+  "scripts:": "tests make test",
+  "engine": "node >= 0.10.18"
 }

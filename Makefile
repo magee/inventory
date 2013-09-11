@@ -17,7 +17,12 @@ test-unit:
 	@NODE_ENV=test ./node_modules/.bin/mocha \
 		--reporter $(REPORTER)
 
-#test
+test-w:
+  @NODE_ENV=test ./node_modules/.bin/mocha \
+		--reporter $(REPORTER) \
+		--growl \
+		--watch
+
 test_build:
 	@@NODE_ENV=test ./node_modules/.bin/mocha \
 		--reporter $(REPORTER)
@@ -66,3 +71,4 @@ release-major: build test
 publish:
 	git push --tags origin HEAD:maketest
 #	npm publish
+

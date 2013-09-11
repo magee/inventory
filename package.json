@@ -20,6 +20,5 @@
     "stylus": "*",
     "growl": "*"
   },
-  "scripts:": "make test",
   "engine": "node >= 0.10.18"
 }

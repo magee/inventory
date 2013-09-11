@@ -11,17 +11,15 @@ build: $(LIB)
 #  @mkdir -p $(@D)
 #  @$(BIN)/coffee -bcp $< > $@
 
-test: test-build test-unit test-acceptance
+test-all: test-build test-acceptance test-unit
 
 test-unit:
 	@NODE_ENV=test ./node_modules/.bin/mocha \
-		--reporter $(REPORTER)
+		--reporter $(REPORTER) --growl --watch
 
-test-w:
-  @NODE_ENV=test ./node_modules/.bin/mocha \
-		--reporter $(REPORTER) \
-		--growl \
-		--watch
+#TODO: "make: nothing to be done for 'test'. error to be debugged
+test:
+  @NODE_ENV=test ./node_modules/.bin/mocha --reporter $(REPORTER) --growl --watch
 
 test_build:
 	@@NODE_ENV=test ./node_modules/.bin/mocha \
@@ -72,3 +70,4 @@ publish:
 	git push --tags origin HEAD:maketest
 #	npm publish
 
+.PHONY: test test-unit test-acceptance test-w release-patch release-minor release-major publish clean test-cov test-build

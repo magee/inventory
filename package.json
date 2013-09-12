@@ -8,19 +8,19 @@
   "author": "Magee Mooney",
   "dependencies": {
     "express": "3.4.0",
-    "angular": "*",
-    "mongodb": "*",
-    "bootstrap-stylus": "*",
-    "nodemon": "*",
-    "superagent": "*"
+    "angular": "0.0.4",
+    "mongodb": "1.3.19",
+    "mongoose": "2.5.13",
+    "nodemon": "0.7.10",
+    "superagent": "0.15.4"
   },
   "devDependencies": {
     "mocha": ">=0.3.x",
-    "should": "*",
-    "expect.js": "*",
-    "jade": "*",
-    "stylus": "*",
-    "growl": "*"
+    "should": "1.2.2",
+    "expect.js": "0.2.0",
+    "jade": "0.35.0",
+    "stylus": "0.37.0",
+    "growl": "1.7.0"
   },
   "scripts": {
     "test": "make test"

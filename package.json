@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "product inventory management and InfusionSoft integration",
   "repository": "https://github.com/magee/inventory.git",
-  "start": "node app.js",
+  "start": "nodemon app.js",
   "main": "app.js",
   "author": "Magee Mooney",
   "dependencies": {
@@ -11,6 +11,8 @@
     "angular": "*",
     "mongodb": "*",
     "bootstrap-stylus": "*",
+    "bootstrap": "*",
+    "nodemon": "*",
     "superagent": "*"
   },
   "devDependencies": {

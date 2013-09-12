@@ -17,8 +17,8 @@
     "mocha": ">=0.3.x",
     "expect.js": "*",
     "jade": "*",
-    "stylus": "*"
+    "stylus": "*",
+    "growl": "*"
   },
-  "scripts:": "tests make test",
   "engine": "node >= 0.10.18"
 }

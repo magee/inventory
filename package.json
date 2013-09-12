@@ -22,5 +22,8 @@
     "stylus": "*",
     "growl": "*"
   },
-  "engine": "node >= 0.10.18"
+  "engines": {
+      "node": "0.10.18",
+      "npm": "1.3.8"
+  }
 }

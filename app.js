@@ -28,7 +28,7 @@ if ('development' === app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
+//app.get('/', routes.index);
 app.get('/users', user.findAll);
 app.get('/user/:id', user.findById);
 
@@ -38,6 +38,18 @@ app.post('/products', products.addProduct);
 app.put('/product/:id', products.updateProduct);
 app.delete('/product/:id', products.deleteProduct);
 
+
+app.get('/about', function(req, res){
+    res.render('about', {
+        title: 'About'
+    });
+});
+
+app.get('/contact', function(req, res){
+    res.render('contact', {
+        title: 'Contact'
+    });
+});
 /*
 app.get('/product/new', function(req, res) {
     res.render('product_new', {

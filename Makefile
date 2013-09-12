@@ -11,15 +11,14 @@ build: $(LIB)
 #  @mkdir -p $(@D)
 #  @$(BIN)/coffee -bcp $< > $@
 
+test:
+	 @NODE_ENV=test ./node_modules/.bin/mocha --reporter $(REPORTER) --growl
+
 test-all: test-build test-acceptance test-unit
 
 test-unit:
 	@NODE_ENV=test ./node_modules/.bin/mocha \
 		--reporter $(REPORTER) --growl --watch
-
-#TODO: "make: nothing to be done for 'test'. error to be debugged
-test:
-  @NODE_ENV=test ./node_modules/.bin/mocha --reporter $(REPORTER) --growl --watch
 
 test_build:
 	@@NODE_ENV=test ./node_modules/.bin/mocha \

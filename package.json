@@ -15,10 +15,14 @@
   },
   "devDependencies": {
     "mocha": ">=0.3.x",
+    "should": "*",
     "expect.js": "*",
     "jade": "*",
     "stylus": "*",
     "growl": "*"
+  },
+  "scripts": {
+    "test": "make test"
   },
   "engine": "node >= 0.10.18"
 }

@@ -54,7 +54,7 @@ $(document).ready(function(){
 		window.setTimeout(function () {
 			App.unblockUI(el);
 			noty({
-				text: '<strong>Widget updated.</strong>',
+				text: '<strong>Update complete.</strong>',
 				type: 'success',
 				timeout: 1000
 			});

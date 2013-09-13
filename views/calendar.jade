@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  include header
+  div#container
+    include sidebar
+    div#content
+      div.container
+        include breadcrumbs
+        include content-header
+        //=== Page Content ===
+        div.row
+          //=== Calendar ===
+          div.col-md-12
+            div.widget
+              div.widget-header
+                h4
+                  i.icon-calendar
+                  | Calendar
+              div.widget-content
+                div#calendar

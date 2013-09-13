@@ -1,0 +1,29 @@
+// Breadcrumbs Line
+div.crumbs
+  ul.breadcrumb#breadcrumbs
+    li
+      i.icon-home
+      a(href='index.html')  Dashboard
+    li.current
+      a(href='pages_calendar.html' title='Calendar')  Calendar
+  ul.crumb-buttons
+    li
+      a(href='charts.html' title='')
+        i.icon-signal
+        | Statistics
+    li.dropdown
+      a(href='*' title='' data-toggle='dropdown')
+        i.icon-tasks
+        span Users
+          strong (+3)
+        i.icon-angle-down.left-padding
+      ul.dropdown-menu.pull-right
+        li
+          a(href='form_components.html' title='')
+            i.icon-reorder
+              | Overview
+    li.range
+      a(href='*')
+        i.icon-calendar
+        span
+        i.icon-angle-down

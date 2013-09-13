@@ -7,6 +7,7 @@ var mongodb = require('mongodb');
 var routes = require('./routes');
 var user = require('./routes/user');
 var products = require('./routes/products');
+var calendar = require('./routes/calendar');
 
 var http = require('http');
 var path = require('path');
@@ -50,6 +51,7 @@ app.get('/products', products.findAll);
 app.get('/product/:id', products.findById);
 app.get('/users', user.findAll);
 app.get('/user/:id', user.findById);
+app.get('/calendar', calendar.my_calendar);
 
 /*
 app.post('/products', products.addProduct);

@@ -1,5 +1,1028 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  // Header
+  header.header.navbar.navbar-fixed-top(role='banner')
+    div.container
+      //Only visible on smartphones, menu toggle
+      ul.nav.navbar-nav
+        li.nav-toggle
+          a(href='javascript:void();')
+            i.icon-reorder
+      // Logo
+      a.navbar-brand(href='index.html')
+        strong
+          =name1
+        =name2
+      // Sidebar Toggler
+      a.toggle-sidebar.bs-tooltip(data-placement='bottom' data-original-title='Toggle navigation')
+        i.icon-reorder
+
+      // Top Left Menu
+      ul.nav.navbar-nav.navbar-left.hidden-xs.hidden-sm
+        li
+          a(href='#') Dashboard
+        li.dropdown
+          a.dropdown-toggle(href='#' data-toggle='dropdown') Dropdown&nbsp;
+            i.icon-caret-down.small
+            ul.dropdown-menu
+              li
+                a(href='#')
+                  i.icon-user   Example #1
+              li
+                a(href='#')
+                  i.icon-calendar   Example #2
+              li.divider
+              li
+                a(href='#')
+                  i.icon-tasks   Example #3
+
+      ul.nav.navbar-nav.navbar-right
+        //Notifications
+        li.dropdown
+          a.dropdown-toggle(data-toggle='dropdown')
+            i.icon-warning-sign
+            span.badge 5
+          ul.dropdown-menu.extended.notification
+            li.title
+              p You have 5 new notifications
+            li
+              a(href='javascript:void(0);')
+                span.label.label-success
+                  i.icon-plus
+                span.message New user registration.
+            li
+              a(href='javascript:void(0);')
+                span.label.label-danger
+                  i.icon-warning-sign
+                span.message High CPU load on cluster #2
+                span.time 5 mins
+            li
+              a(href='javascript:void(0);')
+                span.label.label-success
+                  i.icon-plus
+                span.message New user registration
+                span.time 10 mins
+            li
+              a(href='javascript:void(0);')
+                span.label.label-info
+                  i.icon-bullhorn
+                span.message New items are in queue
+                span.time 25 mins
+            li
+              a(href='javascript:void(0);')
+                span.label.label-warning
+                  i.icon-bolt
+                span.message Disk space to 85% full
+                span.time 55 mins
+            li.footer
+              a(href='javascript:void(0);') View all notifications
+        li.dropdown.hidden-xs.hidden-sm
+          a.dropdown-toggle(href='#' data-toggle='dropdown')
+            i.icon-tasks
+            span.badge 7
+          ul.dropdown-menu.extended.notification
+            li.title
+              p You have 7 pending tasks
+            li
+              a(href='javascript:void(0);')
+                span.task
+                  span.desc Preparing new release
+                  span.percent 30%
+                div.progress.progress-small
+                  div.progress-bar.progress-bar-info(style='width: 30%')
+            li
+              a(href='javascript:void(0);')
+                span.task
+                  span.desc Change Management
+                  span.percent 60%
+                div.progress.progress-small.progress-striped.active
+                  div.progress-bar.progress-bar-danger(style='width: 80%')
+            li
+              a(href='javascript:void(0);')
+                span.task
+                  span.desc Mobile Development
+                  span.percent 60%
+                div.progress.progress-small
+                  div.progress-bar.progress-bar-success(style='width: 60%')
+            li
+              a(href='javascript:void(0);')
+                span.task
+                  span.desc Database Migration
+                  span.percent 20%
+                div.progress.progress-small
+                  div.progress-bar.progress-bar-warning(style='width: 20%')
+            li.footer
+              a(href='javascript:void(0);') View all tasks
+
+
+
+        // Messages
+        li.dropdown.hidden-xs.hidden-sm
+          a.dropdown-toggle(href='#' data-toggle='dropdown')
+            i.icon-envelope
+            span.badge 1
+          ul.dropdown-menu.extended.notification
+            li.title
+              p You have 3 new messages
+            li
+              a(href='javascript:void(0);')
+                span.photo
+                  img(src='assets/img/demo/avatar-1.jpg' alt='')
+                span.subject
+                  span.from Ashley Jude
+                  span.time Just Now
+                span.text Conseteteur sadipscing elitr...
+            li
+              a(href='javascript:void(0);')
+                span.photo
+                  img(src='assets/img/demo/avatar-2.jpg' alt='')
+                span.subject
+                  span.from Ellie Williams
+                  span.time 45 mins
+                span.text Sed diam nonumy...
+            li
+              a(href='javascript:void(0);')
+                span.photo
+                  img(src='assets/img/demo/avatar-3.jpg' alt='')
+                span.subject
+                  span.from Magee Mooney
+                  span.time 6 hours
+                span.text No sea takimata sanctus...
+            li.footer
+              a(href='javascript:void(0);') View all messages
+
+        // Projects
+        li
+          a.dropdown-toggle.row-bg-toggle(href='#')
+            i.icon-resize-vertical
+        li.dropdown
+          a.project-switcher-btn.dropdown-toggle(href='#')
+            i.icon-folder-open
+            span Projects
+        li.dropdown.user
+          a.dropdown-toggle(href='#' data-toggle='dropdown')
+            //<img alt="" src="assets/img/avatar1_small.jpg">
+            i.icon-male
+            span.username Magee Mooney&nbsp;
+            i.icon-caret-down.small
+          ul.dropdown-menu
+            li
+              a(href='pages_user_profile.html')
+                i.icon-user
+                | My Profile
+            li
+              a(href='pages_calendar.html')
+                i.icon-calendar
+                | My Calendar
+            li
+              a(href='#')
+                i.icon-tasks  My Tasks
+            li.divider
+            li
+              a.icon-key(href='login.html')  Log Out
+
+    //Project bar
+    div.container#project-switcher
+      div#scrollbar
+        div.handle
+      div#frame
+        ul.project-list
+          li
+            a(href='javascript:void(0);')
+              span.image
+                i.icon-desktop
+              span.title Lorem ipsum dolor
+          li
+            a(href='javascript:void(0);')
+              span.image
+                i.icon-compass
+              span.title  Dolor sit invidunt
+          li.current
+            a(href='javascript:void(0);')
+              span.image
+                i.icon-male
+              span.title  Consetetur sadipscing elitr
+          li
+            a(href='javascript:void(0);')
+              span.image
+                i.icon-thumbs-up
+              span.title  Sed diam nonumy
+          li
+            a(href='javascript:void(0);')
+              span.image
+                i.icon-female
+              span.title  At vero eos et
+          li
+            a(href='javascript:void(0);')
+              span.image
+                i.icon-beaker
+              span.title  Sed diam voluptua
+          li
+            a(href='javascript:void(0);')
+              span.image
+                i.icon-desktop
+              span.title  Lorem ipsum dolor
+          li
+            a(href='javascript:void(0);')
+              span.image
+                i.icon-compass
+              span.title  Dolor sit invidunt
+          li
+            a(href='javascript:void(0);')
+              span.image
+                i.icon-male
+              span.title  Consetetur sadipscing elitr
+          li
+            a(href='javascript:void(0);')
+              span.image
+                i.icon-thumbs-up
+              span.title  Sed diam nonumy
+          li
+            a(href='javascript:void(0);')
+              span.image
+                i.icon-female
+              span.title  At vero eos et
+          li.
+            a(href='javascript:void(0);')
+              span.image
+                i.icon-beaker
+              span.title  Sed diam voluptua
+
+  div#container
+    //Sidebar
+    div.sidebar-fixed#sidebar
+      div#sidebar-content
+        form.sidebar-search
+          div.input-box
+            button.submit(type='submit')
+              i.icon-search
+            span
+              input(type='text' placeholder='Search...')
+
+        div.sidebar-search-results
+          i.icon-remove.close
+          // Documents
+          div.title  Documents
+          ul.notifications
+            li
+              a(href='javascript:void(0);')
+                div.col-left
+                  span.label.label-info
+                    i.icon-file-text
+                div.col-right.with-margin
+                  span.message
+                    strong  Magee Mooney
+                    received $1.527,32
+                  span.time finances.xls
+            li
+              a(href='javascript:void(0);')
+                div.col-left
+                  span.label.label-success
+                    i.icon-file-text
+                div.col-right.with-margin
+                  span.message  My name is
+                    strong  Magee Mooney
+                     ...
+                  span.time briefing.docx
+
+          // Persons
+          div.title  Persons
+          ul.notifications
+            li
+              a(href='javascript:void(0);')
+                div.col-left
+                  span.label.label-danger
+                    i.icon-female
+                div.col-right.with-margin
+                  span.message Jane
+                    strong  Doe
+                  span.time  21 years old
+
+        // === Navigation ===
+        ul#nav
+          li.current
+            a(href='index.html')
+              i.icon-dashboard
+              | Dashboard
+
+          li
+            a(href='javascript:void(0);')
+              i.icon-table
+              | Inventory
+            ul.sub-menu
+              li
+                a(href='ui_general.html')
+                  i.icon-angle-right
+                  | General
+              li
+                a(href='ui_buttons.html')
+                  i.icon-angle-right
+                  | Buttons
+              li
+                a(href='ui_tabs_accordions.html')
+                  i.icon-angle-right
+                  | Accordions
+              li
+                a(href='ui_sliders.html')
+                  i.icon-angle-right
+                  | Sliders
+              li
+                a(href='ui_nestable_list.html')
+                  i.icon-angle-right
+                  | Nestable List
+              li
+                a(href='ui_typography.html')
+                  i.icon-angle-right
+                  | Typography / Icons
+
+          li
+            a(href='javascript:void(0);')
+              i.icon-desktop
+              | UI Features
+              span.label.label-info.pull-right 6
+            ul.sub-menu
+              li
+                a(href='ui_general.html')
+                  i.icon-angle-right
+                  | General
+              li
+                a(href='ui_buttons.html')
+                  i.icon-angle-right
+                  | Buttons
+              li
+                a(href='ui_tabs_accordions.html')
+                  i.icon-angle-right
+                  | Accordions
+              li
+                a(href='ui_sliders.html')
+                  i.icon-angle-right
+                  | Sliders
+              li
+                a(href='ui_nestable_list.html')
+                  i.icon-angle-right
+                  | Nestable List
+              li
+                a(href='ui_typography.html')
+                  i.icon-angle-right
+                  | Typography / Icons
+
+          li
+            a(href='javascript:void(0);')
+              i.icon-edit
+              | Form Elements
+            ul.sub-menu
+              li
+                a(href='form_components.html')
+                  i.icon-angle-right
+                  | Form Components
+              li
+                a(href='form_layouts.html')
+                  i.icon-angle-right
+                  | Form Layouts
+              li
+                a(href='form_validations.html')
+                  i.icon-angle-right
+                  | Form Validations
+
+          li
+            a(href='javascript:void(0);')
+              i.icon-table
+              | Tables
+            ul.sub-menu
+              li
+                a(href='tables_static.html')
+                  i.icon-angle-right
+                  | Static Tables
+              li
+                a(href='tables_dynamic.html')
+                  i.icon-angle-right
+                  | Dynamic Tables (DataTables)
+              li
+                a(href='tables_responsive.html')
+                  i.icon-angle-right
+                  | Responsive Tables
+
+          li
+            a(href='charts.html')
+              i.icon-bar-chart
+              | Charts &amp; Statistics
+          li
+            a(href='javascript:void(0);')
+              i.icon-folder-open-alt
+              | Pages
+            ul.sub-menu
+              li
+                a(href='login.html')
+                  i.icon-angle-right
+                  | Login
+              li
+                a(href='pages_user_profile.html')
+                  i.icon-angle-right
+                  | User Profile
+              li
+                a(href='pages_calendar.html')
+                  i.icon-angle-right
+                  | Calendar
+              li
+                a(href='pages_invoice.html')
+                  i.icon-angle-right
+                  | Invoice
+          li
+            a(href='javascript:void(0);')
+              i.icon-list-ol
+              | 4 Level Menu
+            ul.sub-menu
+              li.open-default
+                a(href='javascript:void(0);')
+                  i.icon-cogs
+                  | Item 1
+                  span.arrow
+                ul.sub-menu
+                  li.open-default
+                    a(href='javascript:void(0);')
+                      i.icon-user
+                      | Sample Link 1
+                      span.arrow
+                    ul.sub-menu
+                      li.current
+                        a(href='javascript:void(0);')
+                          i.icon-remove
+                          | Sample Link 1
+                      li
+                        a(href='javascript:void(0);')
+                          i.icon-pencil
+                          | Sample Link 2
+                      li
+                        a(href='javascript:void(0);')
+                          i.icon-edit
+                          | Sample Link 3
+                  li
+                    a(href='javascript:void(0);')
+                      i.icon-user
+                      | Sample Link 1
+                  li
+                    a(href='javascript:void(0);')
+                      i.icon-external-link
+                      | Sample Link 2
+                  li
+                    a(href='javascript:void(0);')
+                      i.icon-bell
+                      | Sample Link 3
+              li
+                a(href='javascript:void(0);')
+                  i.icon-glob
+                  | Item 2
+                  span.arrow
+                ul.sub-menu
+                  li
+                    a(href='javascript:void(0);')
+                      i.icon-user
+                      | Sample Link 1
+                  li
+                    a(href='javascript:void(0);')
+                      i.icon-external-link
+                      | Sample Link 2
+                  li
+                    a(href='javascript:void(0);')
+                      i.icon-bell
+                      | Sample Link 3
+
+        // Navigation
+        div.sidebar-title
+          span  Notifications
+
+        ul.notifications.demo-slide-in
+
+          li(style='display:none;')
+            div.col-left
+              span.label.label-danger
+                i.icon-warning-sign
+            div.col-right.with-margin
+              span.message
+                strong #530
+                |  crashed
+              span.time  few seconds ago
+
+          li(style='display:none;')
+            div.col-left
+              span.label.label-info
+                i.icon-envelope
+            div.col-right.with-margin
+              span.message
+                strong John
+                |  sent you a message
+              span.time  few seconds ago
+          li
+            div.col-left
+              span.label.label-success
+                i.icon-plus
+            div.col-right.with-margin
+              span.message
+                strong Emma
+                | &lsquo;s account was created
+              span.time  4 hours ago
+
+        div.sidebar-widget.align-center
+          div.btn-group#theme-switcher(data-toggle='buttons')
+            label.btn.active
+              input(type='radio' name='theme-switcher' data-theme='bright')
+              i.icon-sun
+              | Bright
+            label.btn
+              input(type='radio' name='theme-switcher' data-theme='dark')
+              i.icon-moon
+              | Dark
+
+      div.resizeable#divider
+
+    div#content
+      div.container
+        // Breadcrumbs Line
+        div.crumbs
+          ul.breadcrumb#breadcrumbs
+            li
+              i.icon-home
+              a(href='index.html')  Dashboard
+            li.current
+              a(href='pages_calendar.html' title='Calendar')  Calendar
+          ul.crumb-buttons
+            li
+              a(href='charts.html' title='')
+                i.icon-signal
+                | Statistics
+            li.dropdown
+              a(href='*' title='' data-toggle='dropdown')
+                i.icon-tasks
+                span Users
+                  strong (+3)
+                i.icon-angle-down.left-padding
+              ul.dropdown-menu.pull-right
+                li
+                  a(href='form_components.html' title='')
+                    i.icon-reorder
+                      | Overview
+            li.range
+              a(href='*')
+                i.icon-calendar
+                span
+                i.icon-angle-down
+        div.page-header
+          div.page-title
+            h3 Dashboard
+            span Good morning, Magee!
+          ul.page-stats
+            li
+              div.summary
+                span New Orders
+                h3 17,561
+              div#sparkline-bar.graph.sparkline.hidden-xs 20,15,8,50,20,40,20,30,20,15,30,20,25,20
+              //Use instead of sparkline e.g. this: <div class="graph circular-chart" data-percent="73">73%</div>
+            li
+              div.summary
+                span My balance
+                h3 $21,561.21
+              div#sparkline-bar2.graph.sparkline.hidden-xs 20,15,8,50,20,40,20,30,20,15,30,20,25,20
+
+        //=== Page Content ===
+        //=== Statboxes ===
+        div.row.row-bg
+          div.col-sm-6.col-md-3
+            div.statbox.widget.box.box-shadow
+              div.widget-content
+                div.visual.cyan
+                  div.statbox-sparkline 30,20,15,30,22,25,26,30,27
+                div.title Clients
+                div.value 4 501
+                a.more(href='javascript:void(0);') View More
+                  i.pull-right.icon-angle-right
+          div.col-sm-6.col-md-3
+            div.statbox.widget.box.box-shadow
+              div.widget-content
+                div.visual.green
+                  div.statbox-sparkline 20,30,30,29,22,15,20,30,20
+                div.title Feedback
+                div.value 714
+                a.more(href='javascript:void(0);') View More
+                  i.pull-right.icon-angle-right
+          div.col-sm-6.col-md-3.hidden-xs
+            div.statbox.widget.box.box-shadow
+              div.widget-content
+                div.visual.yellow
+                  i.icon-dollar
+                div.title Total Profit
+                div.value $42,512.61
+                a.more(href='javascript:void(0);') View More
+                  i.pull-right.icon-angle-right
+          div.col-sm-6.col-md-3.hidden-xs
+            div.statbox.widget.box.box-shadow
+              div.widget-content
+                div.visual.red
+                  i.icon-user
+                div.title Visitors
+                div.value 2,521,719
+                a.more(href='javascript:void(0);') View More
+                  i.pull-right.icon-angle-right
+
+        //=== Blue Chart ===
+        div.row
+          div.col-md-12
+            div.widget.box
+              div.widget-header
+                h4
+                  i.icon-reorder
+                  | Total Clicks (
+                  span.blue +29%
+                  | )
+                div.toolbar.no-padding
+                  div.btn-group
+                    span.btn.btn-xs.widget-collapse
+                      i.icon-angle-down
+              div.widget-content
+                div#chart_filled_blue.chart
+              div.divider
+              div.widget-content
+                ul.stats
+                  li
+                    strong 4,853
+                    small Total Views
+                  li.light.hidden-xs
+                    strong 271
+                    small Last 24 Hours
+                  li
+                    strong 1,025
+                    small Unique Users
+                  li.light.hidden-xs
+                    strong 105
+                    small Last 24 Hours
+
+        div.row
+          //=== Sin/Cos Chart
+          div.col-md-6
+            div.widget.box
+              div.widget-header
+                h4
+                  i.icon-reorder
+                  | Sine/Cosine
+                div.toolbar.no-padding
+                  div.btn-group
+                    span.btn.btn-xzs.widget-collapse
+                      i.icon-angle-down
+              div.widget-content
+                div#chart_simple.chart(style='height: 219px')
+
+          //=== Static Table
+
+          div.col-md-6
+            div.widget.box
+              div.widget-header
+                h4
+                  i.icon-reorder
+                  | New Users
+                div.toolbar.no-padding
+                  div.btn-group
+                    span.btn.btn-xzs.widget-collapse
+                      i.icon-angle-down
+              div.widget-content.no-padding
+                table.table.table-striped.table-checkable.table-hover
+                  thead
+                    tr
+                      th.checkbox-column
+                        input.uniform(type='checkbox')
+                      th.hidden-xs First Name
+                      th Last Name
+                      th Status
+                      th.align-center Approve
+                  tbody
+                    tr
+                      td.checkbox-column
+                        input.uniform(type='checkbox')
+                      td.hidden-xs Joey
+                      td Greyson
+                      td
+                        span.label.label-success Approved
+                      td.align-center
+                        span.btn-group
+                          a.btn.btn-xs.bs-tooltip(href='javascript:void(0);' title='Approve')
+                            i.icon-ok
+                    tr
+                      td.checkbox-column
+                        input.uniform(type='checkbox')
+                      td.hidden-xs Wolf
+                      td Bud
+                      td
+                        span.label.label-success Pending
+                      td.align-center
+                        span.btn-group
+                          a.btn.btn-xs.bs-tooltip(href='javascript:void(0);' title='Approve')
+                            i.icon-ok
+                    tr
+                      td.checkbox-column
+                        input.uniform(type='checkbox')
+                      td.hidden-xs Darin
+                      td Alec
+                      td
+                        span.label.label-success Suspended
+                      td.align-center
+                        span.btn-group
+                          a.btn.btn-xs.bs-tooltip(href='javascript:void(0);' title='Approve')
+                            i.icon-ok
+                    tr
+                      td.checkbox-column
+                        input.uniform(type='checkbox')
+                      td.hidden-xs Andrea
+                      td Brenden
+                      td
+                        span.label.label-success Blocked
+                      td.align-center
+                        span.btn-group
+                          a.btn.btn-xs.bs-tooltip(href='javascript:void(0);' title='Approve')
+                            i.icon-ok
+                div.row
+                  div.table-footer
+                    div.col-md-12
+                      div.table-actions
+                        label Apply action:
+                        select.select2(data-minimum-results-for-search='-1' data-placeholder='Select action...')
+                          option(value='Edit') Edit
+                          option(value='Delete') Delete
+                          option(value='Move') Move
+        div.row
+          //=== Calendar ===
+          div.col-md-6
+            div.widget
+              div.widget-header
+                h4
+                  i.icon-calendar Calendar
+              div.widget-content
+                div#calendar
+          //=== Feeds (with Tabs) ===
+          div.col-md-6
+            div.widget
+              div.widget-header
+                h4
+                  i.icon-reorder
+                  | Feeds
+                div.toolbar.no-padding
+                  div.btn-group
+                    span.btn.btn-xs.widget-collapse
+                      i.icon-angle-down
+                    span.btn.btn-xs.widget-refresh
+                      i.icon-refresh
+              div.widget-content
+                div.tabbable.tabbable-custom
+                  ul.nav.nav-tabs
+                    li.active
+                      a(href='#tab_feed_1' data-toggle='tab') System
+                    li
+                      a(href='#tab_feed_2' data-toggle='tab') Activities
+                  div.tab-content
+                    div.tab-pane.active#tab_feed_1
+                      div.scroller(data-height='290px' data-always-visible='1' data-rail-visible='0')
+                        ul.feeds.clearfix
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-success
+                                    i.icon-bell
+                                div.content-col2
+                                  div.desc You have 2 puzzles to solve
+                            div.col2
+                              div.date Just now
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-success
+                                    i.icon-plus
+                                div.content-col2
+                                  div.desc New user registered.
+                            div.col2
+                              div.date 20 mins ago
+                          li.hoverable
+                            a(href='javascript:void(0);')
+                              div.col1
+                                div.content
+                                  div.content-col1
+                                    div.label.label-info
+                                      i.icon-bullhorn
+                                  div.content-col2
+                                    div.desc New items are in queue.
+                              div.col2
+                                div.date 25 mins ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-danger
+                                    i.icon-warning-sign
+                                div.content-col2
+                                  div.desc High CPU load on cluster #2.
+                                    span.label.label-danger.label-mini Fix it
+                                      i.icon-share-alt
+                            div.col2
+                              div.date 30 mins ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-warning
+                                    i.icon-bolt
+                                div.content-col2
+                                  div.desc Disk space to 85% full.
+                            div.col2
+                              div.date 45 mins ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-success
+                                    i.icon-plus
+                                div.content-col2
+                                  div.desc New user registered.
+                            div.col2
+                              div.date 1 hour ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-default
+                                    i.icon-time
+                                div.content-col2
+                                  div.desc Time successfully synced.
+                            div.col2
+                              div.date 1.5 hours ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-info
+                                    i.icon-bullhorn
+                                div.content-col2
+                                  div.desc Download finished.
+                            div.col2
+                              div.date 1.8 hours ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-success
+                                    i.icon-plus
+                                div.content-col2
+                                  div.desc New order received.
+                            div.col2
+                              div.date 2 hours ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-info
+                                    i.icon-bullhorn
+                                div.content-col2
+                                  div.desc Download finished.
+                            div.col2
+                              div.date 3 hours ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-success
+                                    i.icon-plus
+                                div.content-col2
+                                  div.desc New order received.
+                            div.col2
+                              div.date 5 hours ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-info
+                                    i.icon-bullhorn
+                                div.content-col2
+                                  div.desc Download finished.
+                            div.col2
+                              div.date 5.5 hours ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-success
+                                    i.icon-plus
+                                div.content-col2
+                                  div.desc New order received.
+                            div.col2
+                              div.date 7 hours ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-info
+                                    i.icon-bullhorn
+                                div.content-col2
+                                  div.desc Download finished.
+                            div.col2
+                              div.date 16 hours ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-success
+                                    i.icon-plus
+                                div.content-col2
+                                  div.desc New order received.
+                            div.col2
+                              div.date 20 hours ago
+                    div.tab-pane#tab_feed_2
+                      div.scroller(data-height='290px' data-always-visible='1' data-rail-visible='0')
+                        ul.feeds.clearfix
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-success
+                                    i.icon-plus
+                                div.content-col2
+                                  div.desc New user registered.
+                            div.col2
+                              div.date 1 min ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-success
+                                    i.icon-plus
+                                div.content-col2
+                                  div.desc New user registered.
+                            div.col2
+                              div.date 5 mins ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-info
+                                    i.icon-plus
+                                div.content-col2
+                                  div.desc New order received.
+                            div.col2
+                              div.date 10 mins ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-success
+                                    i.icon-plus
+                                div.content-col2
+                                  div.desc New user registered.
+                            div.col2
+                              div.date 20 mins ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-info
+                                    i.icon-plus
+                                div.content-col2
+                                  div.desc New order received.
+                            div.col2
+                              div.date 30 mins ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-success
+                                    i.icon-plus
+                                div.content-col2
+                                  div.desc New user registered.
+                            div.col2
+                              div.date 40 mins ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-info
+                                    i.icon-plus
+                                div.content-col2
+                                  div.desc New order received.
+                            div.col2
+                              div.date 50 mins ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-success
+                                    i.icon-plus
+                                div.content-col2
+                                  div.desc New user registered.
+                            div.col2
+                              div.date 1 hour ago
+                          li
+                            div.col1
+                              div.content
+                                div.content-col1
+                                  div.label.label-info
+                                    i.icon-plus
+                                div.content-col2
+                                  div.desc New order received.
+                            div.col2
+                              div.date 1.5 hours ago

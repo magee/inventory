@@ -1,7 +1,6 @@
 'use strict';
 
 var mongo = require('mongodb');
-
 var Server = mongo.Server
   , Db = mongo.Db
   , BSON = mongo.BSONPure

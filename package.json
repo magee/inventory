@@ -16,7 +16,7 @@
     "connect-timeout": "*",
     "connect-mongostore": "*",
     "superagent": "0.15.4",
-    "flot": "0.8.0"
+    "flot": "0.8.0-alpha"
   },
   "devDependencies": {
     "mocha": ">=0.3.x",

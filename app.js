@@ -8,6 +8,7 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var products = require('./routes/products');
 var calendar = require('./routes/calendar');
+var contacts = require('./routes/contacts');
 
 var http = require('http');
 var path = require('path');
@@ -52,8 +53,11 @@ app.get('/product/:id', products.findById);
 app.get('/users', user.findAll);
 app.get('/user/:id', user.findById);
 app.get('/calendar', calendar.my_calendar);
+app.get('/contacts', contacts.findAll);
+//app.get('/infusionsoft', infusionsoft.getProducts);
 
-/*
+
+
 app.post('/products', products.addProduct);
 app.put('/product/:id', products.updateProduct);
 app.delete('/product/:id', products.deleteProduct);
@@ -70,7 +74,6 @@ app.post('/product/new', function(req, res){
     res.redirect('/')
   });
 });
-*/
 
 http.createServer(app).listen(app.get('port'), function () {
   'use strict';

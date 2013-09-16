@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  include header
+  div#container
+    include sidebar
+    div#content
+      div.container
+        include breadcrumbs
+        include content-header
+        //=== Page Content ===
+        div(ng-controller='Contacts')
+          div.span10
+            ul
+              li(ng-repeat='person in subscribers')
+                {{person.name}}

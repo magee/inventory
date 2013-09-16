@@ -87,6 +87,66 @@ exports.deleteProduct = function (req, res) {
 
 var populateDB = function () {
 
+  var vendors = [
+    {
+      code: 1,
+      name: 'Agave'
+    },
+    {
+      code: 2,
+      name: 'Michael Kors'
+    },
+    {
+      code: 3,
+      name: 'Tahari'
+    },
+    {
+      code: 5,
+      name: 'Chain+Circle'
+    },
+    {
+      code: 4,
+      name: 'BCBG'
+    }];
+
+  var categories = [
+    {
+      code: 1,
+      name: 'tops'
+    },
+    {
+      code: 2,
+      name: 'sweaters'
+    },
+    {
+      code: 3,
+      name: 'skirts'
+    },
+    {
+      code: 4,
+      name: 'shoes'
+    },
+    {
+      code: 5,
+      name: 'pants'
+    },
+    {
+      code: 6,
+      name: 'denim'
+    },
+    {
+      code: 7,
+      name: 'jackets'
+    },
+    {
+      code: 8,
+      name: 'dresses'
+    },
+    {
+      code: 9,
+      name: 'accessories'
+    }];
+
   var products = [
     {
       name: 'Knit Tie Dye Maxi Dress',
@@ -156,5 +216,14 @@ var populateDB = function () {
   db.collection('products', function (err, collection) {
     collection.insert(products, {safe: true}, function (err, result) {});
   });
+
+  db.collection('categories', function (err, collection) {
+    collection.insert(categories, {safe: true}, function (err, result) {});
+  });
+
+  db.collection('vendors', function (err, collection) {
+    collection.insert(vendors, {safe: true}, function (err, result) {});
+  });
+
 
 };

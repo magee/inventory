@@ -9,6 +9,9 @@ var user = require('./routes/user');
 var products = require('./routes/products');
 var calendar = require('./routes/calendar');
 var contacts = require('./routes/contacts');
+var inventory = require('./routes/inventory');
+var gallery = require('./routes/gallery');
+var tests = require('./routes/test');
 
 var http = require('http');
 var path = require('path');
@@ -38,10 +41,11 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser('your secret here'));
 app.use(app.router);
-app.use(express['static'](path.join(__dirname, '/public')));
 
+app.use(express['static'](path.join(__dirname, '/public')));
 app.use(require('stylus').middleware(__dirname + '/public'));
 
+app.engine('html', require('ejs').renderFile);
 // development only
 if ('development' === app.get('env')) {
   app.use(express.errorHandler());
@@ -53,9 +57,21 @@ app.get('/product/:id', products.findById);
 app.get('/users', user.findAll);
 app.get('/user/:id', user.findById);
 app.get('/calendar', calendar.my_calendar);
-app.get('/contacts', contacts.findAll);
+app.get('/gallery', gallery.findAll);
+app.get('/inventory2', inventory.products);
+app.get('/inventory', inventory.findAll);
+app.get('/contacts', contacts.findTest);
 //app.get('/infusionsoft', infusionsoft.getProducts);
-
+app.get('/google', function(req, res){
+  res.render('oauth-test.html');
+});
+// Parse testing
+app.get('/parse', function(req, res){
+  res.render('parse-test');
+});
+app.get('/video', function(req, res){
+  res.render('video-test');
+});
 
 
 app.post('/products', products.addProduct);

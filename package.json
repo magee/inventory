@@ -22,7 +22,9 @@
     "xmlrpc": "~1.1.0",
     "underscore": "~1.5.1",
     "q": "~0.9.6",
-    "inflection": "~1.2.6"
+    "inflection": "~1.2.6",
+    "csv": "~0.3.6",
+    "ejs": "~0.8.4"
   },
   "devDependencies": {
     "mocha": ">=0.3.x",

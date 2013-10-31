@@ -9,8 +9,54 @@ block content
         include breadcrumbs
         include content-header
         //=== Page Content ===
-        div(ng-controller='Infusionsoft')
-        	div.span10
-        		ul
-        			li(ng-repeat='product in products')
-        				{{Id}}: {{ProductName}}
+        //=== Responsive DataTable ===
+        div.row
+          div.col-md-12
+            div.widget.box
+              div.widget-header
+                h4
+                  i.icon-reorder
+                  | Inventory
+                div.toolbar.no-padding
+                  div.btn-group
+                    span.btn.btn-xs.widget-collapse
+                      i.icon-angle-down
+              div.widget-content.no-padding
+                table.table.table-striped.table-bordered.table-hover.table-checkable.table-responsive.datatable
+                  thead
+                    tr
+                      th.checkbox-column
+                        input.uniform(type='checkbox')
+                      th(data-class='expand') Product
+                      th Vendor
+                      th(data-hide='Denim') Denim
+                      th(data-hide='QuickBooks Desc')
+                  tbody
+                    tr
+                      td.checkbox-column
+                        input.uniform(type='checkbox')
+                      td Slim Leg Jeans
+                      td Agave
+                      td Denim
+                      td Agave Slim Leg-Gunmetal-[size]
+                    tr
+                      td.checkbox-column
+                        input.uniform(type='checkbox')
+                      td Carol
+                      td Betsey Johnson
+                      td Shoes
+                      td Betsey JohnsonCarol-[color]-[size]
+                    tr
+                      td.checkbox-column
+                        input.uniform(type='checkbox')
+                      td Cutout Top
+                      td Cotton+Candy
+                      td Tops
+                      td Cotton+Candy CutoutTop-[color]-[size]
+                    tr
+                      td.checkbox-column
+                        input.uniform(type='checkbox')
+                      td Kashmir
+                      td Franco Sarto
+                      td Franco Sarto Kashmir-[color]-[size]
+                      td
